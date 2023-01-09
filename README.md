@@ -15,6 +15,6 @@ The most prominent changes to the original task are:
 - Substitution of the motor task (button pressing) with a simple finger-tapping paradigm
 - Enabling eye-tracking with our SR instruments device.
 
-### Relicensing
+### License
 
-Although the original sourcecode was released under MIT, we have changed the license to Apache 2.0 in order to abide by the [NiPreps licensing principles](https://www.nipreps.org/community/licensing/)
+Although the original sourcecode was released under MIT, we have changed the license to Apache 2.0 in order to abide by the [NiPreps licensing principles](https://www.nipreps.org/community/licensing/). See ``NOTICE`` file for further details.
