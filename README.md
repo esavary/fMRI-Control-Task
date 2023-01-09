@@ -1,5 +1,17 @@
-# fMRI-Control-Task
-Code from preprint: A short, robust brain activation control task optimised for pharmacological fMRI studies. For details see: https://www.biorxiv.org/content/early/2017/12/14/233783
+# Quality Control, positive control fMRI task
 
-Abstract: 
-Functional magnetic resonance imaging (fMRI) is a popular method for examining pharmacological effects on the brain; however the BOLD response is an indirect measure of neural activity, and as such is vulnerable to confounding effects of pharmacological probes. Controlling for such non-specific effects in pharmacological fMRI studies is therefore an important consideration. We have developed two variants of a standardized control task that are short (5 minutes duration) simple (for both the subject and experimenter), widely applicable, and yield a number of readouts in a spatially diverse set of brain networks. The tasks consist of four functionally discreet three-second trial types (plus additional null trials) and contain visual, auditory, motor and cognitive (eye-movements, and working memory tasks in the two task variants) stimuli. Performance of the tasks was assessed in a group of 15 subjects scanned on two separate occasions, with test-retest reliability explicitly assessed using intra-class correlation coefficients. Both tasks produced robust patterns of brain activation in the expected brain regions, and reliability coefficients for the tasks were generally high, with four out of eight task conditions rated as 'excellent', and only one out of eight rated as 'poor'. Voxel-wise reliability measures also showed good spatial concordances with the brain activation results. Either of the two task variants would be suitable for use as a control task in future pharmacological fMRI studies or for any situation where a short, reliable, basic task paradigm is required. Stimulus code is available online for re-use by the scientific community.
+This repository contains a Psychopy3 experiment describing the quality control fMRI task of the Human Connectome Phantom (HCPh) project.
+The task contains a visual trial block, an eye-movement trial block, and a finger-tapping trial block.
+
+The task has been derived from «Version A» of the task proposed by Harvey et al.:
+
+     Harvey J, Demetriou L, McGonigle J, Wall MB. 2018. A short, robust brain activation
+     control task optimised for pharmacological fMRI studies. PeerJ 6:e5540
+     doi:https://doi.org/10.7717/peerj.5540
+
+The most prominent changes to the original task are:
+
+- Elimination of the auditive block (since we do not plan the parcipant to wear headphones)
+- Substitution of the motor task (button pressing) with a simple finger-tapping paradigm
+- Enabling eye-tracking with our SR instruments device.
+
