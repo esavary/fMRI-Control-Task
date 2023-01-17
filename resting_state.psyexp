@@ -70,7 +70,7 @@
     <Routine name="resting">
       <EyetrackerRecordComponent name="etRecord" plugin="None">
         <Param val="Start and Stop" valType="str" updates="None" name="actionType"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="etRecord" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
@@ -90,7 +90,7 @@
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="False" valType="bool" updates="None" name="loop"/>
-        <Param val="/home/esavary/Downloads/Private Island 🏝 Beach Walking Tour Motu Tane, Bora Bora, French Polynesia 🇵🇫 4K Ultra HD Travel.mp4" valType="file" updates="constant" name="movie"/>
+        <Param val="/home/esavary/Downloads/movie_experiment.mp4" valType="file" updates="constant" name="movie"/>
         <Param val="movie" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
@@ -103,7 +103,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="1200" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="1" valType="num" updates="None" name="volume"/>
       </MovieComponent>
     </Routine>
@@ -151,7 +151,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
       <TextComponent name="text" plugin="None">
@@ -184,7 +184,7 @@
       <Param name="borderColor" updates="None" val="black" valType="color"/>
       <Param name="borderWidth" updates="None" val="2" valType="num"/>
       <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
-      <Param name="disabled" updates="None" val="False" valType="bool"/>
+      <Param name="disabled" updates="None" val="True" valType="bool"/>
       <Param name="expandDur" updates="None" val="1" valType="num"/>
       <Param name="expandScale" updates="None" val="1.5" valType="num"/>
       <Param name="fillColor" updates="None" val="" valType="color"/>
