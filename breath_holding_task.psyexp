@@ -869,7 +869,7 @@
       <Param name="fillColor" updates="None" val="" valType="color"/>
       <Param name="innerBorderColor" updates="None" val="black" valType="color"/>
       <Param name="innerBorderWidth" updates="None" val="2" valType="num"/>
-      <Param name="innerFillColor" updates="None" val="red" valType="color"/>
+      <Param name="innerFillColor" updates="None" val="green" valType="color"/>
       <Param name="innerRadius" updates="None" val="0.035" valType="num"/>
       <Param name="movementAnimation" updates="None" val="True" valType="bool"/>
       <Param name="movementDur" updates="None" val="1.0" valType="num"/>
