@@ -119,11 +119,11 @@
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="1" valType="str" updates="None" name="startdata"/>
+        <Param val="$(&quot;\x03&quot;)" valType="str" updates="None" name="startdata"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.008" valType="code" updates="constant" name="stopVal"/>
         <Param val="1" valType="int" updates="None" name="stopbits"/>
-        <Param val="0" valType="str" updates="None" name="stopdata"/>
+        <Param val="" valType="str" updates="None" name="stopdata"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="" valType="int" updates="None" name="timeout"/>
       </SerialOutComponent>
@@ -140,11 +140,11 @@
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="1200" valType="code" updates="None" name="startVal"/>
-        <Param val="1" valType="str" updates="None" name="startdata"/>
+        <Param val="$(&quot;\x02&quot;)" valType="str" updates="None" name="startdata"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.008" valType="code" updates="constant" name="stopVal"/>
         <Param val="1" valType="int" updates="None" name="stopbits"/>
-        <Param val="0" valType="str" updates="None" name="stopdata"/>
+        <Param val="" valType="str" updates="None" name="stopdata"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="" valType="int" updates="None" name="timeout"/>
       </SerialOutComponent>
@@ -250,11 +250,11 @@
       <Param name="innerBorderColor" updates="None" val="black" valType="color"/>
       <Param name="innerBorderWidth" updates="None" val="2" valType="num"/>
       <Param name="innerFillColor" updates="None" val="green" valType="color"/>
-      <Param name="innerRadius" updates="None" val="0.035" valType="num"/>
+      <Param name="innerRadius" updates="None" val="0.0075" valType="num"/>
       <Param name="movementAnimation" updates="None" val="True" valType="bool"/>
       <Param name="movementDur" updates="None" val="1.0" valType="num"/>
       <Param name="name" updates="None" val="calibration" valType="code"/>
-      <Param name="outerRadius" updates="None" val="0.075" valType="num"/>
+      <Param name="outerRadius" updates="None" val="0.015" valType="num"/>
       <Param name="progressMode" updates="None" val="time" valType="str"/>
       <Param name="randomisePos" updates="None" val="True" valType="bool"/>
       <Param name="targetDelay" updates="None" val="1.0" valType="num"/>
