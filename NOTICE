@@ -1,5 +1,6 @@
 HCPh Control Task
-This product was derived from the fMRI-Control-Task codebase (see below).
+The "positive-control task" distributed within this product was derived from
+the fMRI-Control-Task codebase (see below).
 Copyright 2023 The Axon Lab
 
 fMRI-Control-Task (https://github.com/mattwall1103/fMRI-Control-Task)
