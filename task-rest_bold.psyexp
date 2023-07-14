@@ -109,7 +109,7 @@
       <SerialOutComponent name="D8" plugin="None">
         <Param val="9600" valType="int" updates="None" name="baudrate"/>
         <Param val="8" valType="int" updates="None" name="bytesize"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="bool" updates="None" name="getResponse"/>
         <Param val="D8" valType="code" updates="None" name="name"/>
@@ -119,18 +119,18 @@
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="1" valType="str" updates="None" name="startdata"/>
+        <Param val="$(&quot;\x03&quot;)" valType="str" updates="None" name="startdata"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.008" valType="code" updates="constant" name="stopVal"/>
         <Param val="1" valType="int" updates="None" name="stopbits"/>
-        <Param val="0" valType="str" updates="None" name="stopdata"/>
+        <Param val="" valType="str" updates="None" name="stopdata"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="" valType="int" updates="None" name="timeout"/>
       </SerialOutComponent>
       <SerialOutComponent name="D8_2" plugin="None">
         <Param val="9600" valType="int" updates="None" name="baudrate"/>
         <Param val="8" valType="int" updates="None" name="bytesize"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="bool" updates="None" name="getResponse"/>
         <Param val="D8_2" valType="code" updates="None" name="name"/>
@@ -140,11 +140,11 @@
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="1200" valType="code" updates="None" name="startVal"/>
-        <Param val="1" valType="str" updates="None" name="startdata"/>
+        <Param val="$(&quot;\x02&quot;)" valType="str" updates="None" name="startdata"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.008" valType="code" updates="constant" name="stopVal"/>
         <Param val="1" valType="int" updates="None" name="stopbits"/>
-        <Param val="0" valType="str" updates="None" name="stopdata"/>
+        <Param val="" valType="str" updates="None" name="stopdata"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="" valType="int" updates="None" name="timeout"/>
       </SerialOutComponent>
@@ -164,6 +164,23 @@
         <Param val="ioServer.getDevice('tracker').sendMessage(&quot;bye rs&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="channel_2" plugin="None">
+        <Param val="import socket&amp;#10;&amp;#10;def send_message(addr, message):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect(addr)&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as socket from 'socket';&amp;#10;function send_message(addr, message) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect(addr);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x02&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x02&quot;)" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="channel_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
     <Routine name="intro">
@@ -250,11 +267,11 @@
       <Param name="innerBorderColor" updates="None" val="black" valType="color"/>
       <Param name="innerBorderWidth" updates="None" val="2" valType="num"/>
       <Param name="innerFillColor" updates="None" val="green" valType="color"/>
-      <Param name="innerRadius" updates="None" val="0.035" valType="num"/>
+      <Param name="innerRadius" updates="None" val="0.0075" valType="num"/>
       <Param name="movementAnimation" updates="None" val="True" valType="bool"/>
       <Param name="movementDur" updates="None" val="1.0" valType="num"/>
       <Param name="name" updates="None" val="calibration" valType="code"/>
-      <Param name="outerRadius" updates="None" val="0.075" valType="num"/>
+      <Param name="outerRadius" updates="None" val="0.015" valType="num"/>
       <Param name="progressMode" updates="None" val="time" valType="str"/>
       <Param name="randomisePos" updates="None" val="True" valType="bool"/>
       <Param name="targetDelay" updates="None" val="1.0" valType="num"/>
