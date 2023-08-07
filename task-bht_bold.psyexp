@@ -1031,16 +1031,16 @@
       <Param name="innerBorderColor" updates="None" val="black" valType="color"/>
       <Param name="innerBorderWidth" updates="None" val="2" valType="num"/>
       <Param name="innerFillColor" updates="None" val="green" valType="color"/>
-      <Param name="innerRadius" updates="None" val="0.0075" valType="num"/>
+      <Param name="innerRadius" updates="None" val="0.35" valType="num"/>
       <Param name="movementAnimation" updates="None" val="True" valType="bool"/>
       <Param name="movementDur" updates="None" val="1.0" valType="num"/>
       <Param name="name" updates="None" val="calibration_2" valType="code"/>
-      <Param name="outerRadius" updates="None" val="0.015" valType="num"/>
+      <Param name="outerRadius" updates="None" val="0.75" valType="num"/>
       <Param name="progressMode" updates="None" val="time" valType="str"/>
       <Param name="randomisePos" updates="None" val="True" valType="bool"/>
       <Param name="targetDelay" updates="None" val="1.0" valType="num"/>
       <Param name="targetDur" updates="None" val="1.5" valType="num"/>
-      <Param name="targetLayout" updates="None" val="NINE_POINTS" valType="str"/>
+      <Param name="targetLayout" updates="None" val="FIVE_POINTS" valType="str"/>
       <Param name="textColor" updates="None" val="white" valType="color"/>
       <Param name="units" updates="None" val="from exp settings" valType="str"/>
     </EyetrackerCalibrationRoutine>
