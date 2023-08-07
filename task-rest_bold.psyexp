@@ -383,11 +383,11 @@
       <Param name="innerBorderColor" updates="None" val="black" valType="color"/>
       <Param name="innerBorderWidth" updates="None" val="2" valType="num"/>
       <Param name="innerFillColor" updates="None" val="green" valType="color"/>
-      <Param name="innerRadius" updates="None" val="0.35" valType="num"/>
+      <Param name="innerRadius" updates="None" val="0.035" valType="num"/>
       <Param name="movementAnimation" updates="None" val="True" valType="bool"/>
       <Param name="movementDur" updates="None" val="1.0" valType="num"/>
       <Param name="name" updates="None" val="calibration" valType="code"/>
-      <Param name="outerRadius" updates="None" val="0.75" valType="num"/>
+      <Param name="outerRadius" updates="None" val="0.075" valType="num"/>
       <Param name="progressMode" updates="None" val="time" valType="str"/>
       <Param name="randomisePos" updates="None" val="True" valType="bool"/>
       <Param name="targetDelay" updates="None" val="1.0" valType="num"/>
