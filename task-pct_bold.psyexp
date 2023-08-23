@@ -169,7 +169,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x02&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x02&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -319,7 +319,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x04&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x04&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -432,7 +432,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x08&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x08&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -547,7 +547,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x20&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x20&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -781,12 +781,12 @@
         <Param val="" valType="int" updates="None" name="timeout"/>
       </SerialOutComponent>
       <CodeComponent name="channel_2" plugin="None">
-        <Param val="import socket&amp;#10;def send_message(addr, message):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect(addr)&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="import * as socket from 'socket';&amp;#10;function send_message(addr, message) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect(addr);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="import socket&amp;#10;def send_message(message, addr=&quot;localhost&quot;, port=2023):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect((addr, port))&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as socket from 'socket';&amp;#10;function send_message(message, addr = &quot;localhost&quot;, port = 2023) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect([addr, port]);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x02&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x02&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -868,7 +868,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="server_addr = ('localhost', 8888)&amp;#10;send_message(server_addr, b&quot;\x10&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x10&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -951,11 +951,11 @@
       <Param name="innerBorderColor" updates="None" val="black" valType="color"/>
       <Param name="innerBorderWidth" updates="None" val="2" valType="num"/>
       <Param name="innerFillColor" updates="None" val="green" valType="color"/>
-      <Param name="innerRadius" updates="None" val="0.35" valType="num"/>
+      <Param name="innerRadius" updates="None" val="0.035" valType="num"/>
       <Param name="movementAnimation" updates="None" val="True" valType="bool"/>
       <Param name="movementDur" updates="None" val="1.0" valType="num"/>
       <Param name="name" updates="None" val="calibration" valType="code"/>
-      <Param name="outerRadius" updates="None" val="0.75" valType="num"/>
+      <Param name="outerRadius" updates="None" val="0.075" valType="num"/>
       <Param name="progressMode" updates="None" val="time" valType="str"/>
       <Param name="randomisePos" updates="None" val="False" valType="bool"/>
       <Param name="targetDelay" updates="None" val="1.0" valType="num"/>
