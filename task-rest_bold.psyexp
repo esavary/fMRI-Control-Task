@@ -259,7 +259,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="send_message(b&quot;\x06&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start fixation&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(b&quot;\x86&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start fixation&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
