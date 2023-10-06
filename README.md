@@ -3,7 +3,7 @@
 This repository contains three functional MRI tasks implemented as *Psychopy3* experiments:
 
 * Breath-holding task (BHT): [`task-bht_bold.psyexp`](https://github.com/TheAxonLab/HCPh-fMRI-tasks/blob/master/task-bht_bold.psyexp)
-* Positive-control task (PCT): [`task-pct_bold.psyexp`](https://github.com/TheAxonLab/HCPh-fMRI-tasks/blob/master/task-pct_bold.psyexp)
+* Quality-control task (QCT): [`task-qct_bold.psyexp`](https://github.com/TheAxonLab/HCPh-fMRI-tasks/blob/master/task-qct_bold.psyexp)
 * Resting-state fMRI (rest): [`task-rest_bold.psyexp`](https://github.com/TheAxonLab/HCPh-fMRI-tasks/blob/master/task-rest_bold.psyexp)
 
 ## Positive control task
