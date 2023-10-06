@@ -93,7 +93,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
@@ -122,7 +122,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
@@ -538,7 +538,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
@@ -567,7 +567,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
@@ -598,7 +598,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
@@ -627,7 +627,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
@@ -635,8 +635,8 @@
     </Routine>
     <Routine name="ET_start">
       <CodeComponent name="channel2_start" plugin="None">
-        <Param val="import socket&amp;#10;def send_message(message, addr=&quot;localhost&quot;, port=2023):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect((addr, port))&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()&amp;#10;&amp;#10;&amp;#10;&amp;#10;folder_path = os.path.dirname('/home/common/workspace/HCPh-data/Psychopy/session-'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)+'/')&amp;#10;&amp;#10;ename = 'validation_'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)&amp;#10;&amp;#10;trial = 0&amp;#10;for file in os.listdir(folder_path):&amp;#10;    if ename in file and '.log' in file:&amp;#10;        trial += 1" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="import * as socket from 'socket';&amp;#10;var _pj;&amp;#10;var ename, folder_path;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;function send_message(message, addr = &quot;localhost&quot;, port = 2023) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect([addr, port]);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;folder_path = os.path.dirname(((&quot;/home/common/workspace/HCPh-data/Psychopy/session-&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;})) + &quot;/&quot;));&amp;#10;ename = (&quot;validation_&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;}));&amp;#10;trial = 0;&amp;#10;for (var file, _pj_c = 0, _pj_a = os.listdir(folder_path), _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    file = _pj_a[_pj_c];&amp;#10;    if ((_pj.in_es6(ename, file) &amp;&amp; _pj.in_es6(&quot;.log&quot;, file))) {&amp;#10;        trial += 1;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="import socket&amp;#10;def send_message(message, addr=&quot;localhost&quot;, port=2023):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect((addr, port))&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()&amp;#10;&amp;#10;&amp;#10;&amp;#10;folder_path = os.path.dirname('/home/common/workspace/HCPh-data/Psychopy/session-'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)+'/')&amp;#10;if not os.path.exists(folder_path):&amp;#10;    os.makedirs(folder_path)&amp;#10;ename = 'validation_'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)&amp;#10;&amp;#10;trial = 0&amp;#10;for file in os.listdir(folder_path):&amp;#10;    if ename in file and '.log' in file:&amp;#10;        trial += 1" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as socket from 'socket';&amp;#10;var _pj;&amp;#10;var ename, folder_path;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;function send_message(message, addr = &quot;localhost&quot;, port = 2023) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect([addr, port]);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;folder_path = os.path.dirname(((&quot;/home/common/workspace/HCPh-data/Psychopy/session-&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;})) + &quot;/&quot;));&amp;#10;if ((! os.path.exists(folder_path))) {&amp;#10;    os.makedirs(folder_path);&amp;#10;}&amp;#10;ename = (&quot;validation_&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;}));&amp;#10;trial = 0;&amp;#10;for (var file, _pj_c = 0, _pj_a = os.listdir(folder_path), _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    file = _pj_a[_pj_c];&amp;#10;    if ((_pj.in_es6(ename, file) &amp;&amp; _pj.in_es6(&quot;.log&quot;, file))) {&amp;#10;        trial += 1;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
@@ -675,8 +675,8 @@
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="condition" valType="str" updates="None" name="stopType"/>
+        <Param val="True" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
       </EyetrackerRecordComponent>
       <CodeComponent name="channel_2_2" plugin="None">
@@ -703,12 +703,12 @@
     <Routine name="dot_center"/>
     <LoopInitiator loopType="TrialHandler" name="trials_2">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('xpos', 0.5), ('ypos', 0.6)]), OrderedDict([('xpos', 0.5), ('ypos', 0.6)]), OrderedDict([('xpos', 0.5), ('ypos', -0.6)]), OrderedDict([('xpos', -0.5), ('ypos', 0.6)])]" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('xpos', 0.4), ('ypos', 0.4)]), OrderedDict([('xpos', 0.4), ('ypos', -0.4)]), OrderedDict([('xpos', -0.4), ('ypos', -0.4)]), OrderedDict([('xpos', -0.4), ('ypos', 0.4)])]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="validation_fourcorners.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="4" valType="num"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
       <Param name="name" updates="None" val="trials_2" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
