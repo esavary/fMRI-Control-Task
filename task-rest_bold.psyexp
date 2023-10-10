@@ -98,15 +98,15 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="send_message(b&quot;\x20&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start movie&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(signals.REST_START.to_bytes());&amp;#10;ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;start movie&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="send_message(signals.REST_START.to_bytes())&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start movie&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="send_message(b&quot;\x40&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;end movie&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="send_message(signals.REST_STOP.to_bytes());&amp;#10;ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;end movie&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="send_message(signals.REST_STOP.to_bytes())&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;end movie&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="channel_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -254,19 +254,19 @@
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
       </EyetrackerRecordComponent>
       <CodeComponent name="channel2_start" plugin="None">
-        <Param val="import socket&amp;#10;def send_message(message, addr=&quot;localhost&quot;, port=2023):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect((addr, port))&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()&amp;#10;&amp;#10;&amp;#10;&amp;#10;folder_path = os.path.dirname('/home/common/workspace/HCPh-data/Psychopy/session-'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)+'/')&amp;#10;if not os.path.exists(folder_path):&amp;#10;    os.makedirs(folder_path)&amp;#10;ename = 'resting_state_'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)&amp;#10;&amp;#10;trial = 0&amp;#10;for file in os.listdir(folder_path):&amp;#10;    if ename in file and '.log' in file:&amp;#10;        trial += 1" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="import * as socket from 'socket';&amp;#10;var _pj;&amp;#10;var ename, folder_path, trial;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;function send_message(message, addr = &quot;localhost&quot;, port = 2023) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect([addr, port]);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;folder_path = os.path.dirname(((&quot;/home/common/workspace/HCPh-data/Psychopy/session-&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;})) + &quot;/&quot;));&amp;#10;if ((! os.path.exists(folder_path))) {&amp;#10;    os.makedirs(folder_path);&amp;#10;}&amp;#10;ename = (&quot;resting_state_&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;}));&amp;#10;trial = 0;&amp;#10;for (var file, _pj_c = 0, _pj_a = os.listdir(folder_path), _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    file = _pj_a[_pj_c];&amp;#10;    if ((_pj.in_es6(ename, file) &amp;&amp; _pj.in_es6(&quot;.log&quot;, file))) {&amp;#10;        trial += 1;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="import socket&amp;#10;from hcphsignals import signals&amp;#10;def send_message(message, addr=&quot;localhost&quot;, port=2023):&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)&amp;#10;    client_socket.connect((addr, port))&amp;#10;    client_socket.sendall(message)&amp;#10;    client_socket.close()&amp;#10;&amp;#10;&amp;#10;&amp;#10;folder_path = os.path.dirname('/home/common/workspace/HCPh-data/Psychopy/session-'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)+'/')&amp;#10;if not os.path.exists(folder_path):&amp;#10;    os.makedirs(folder_path)&amp;#10;ename = 'resting_state_'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)&amp;#10;&amp;#10;trial = 0&amp;#10;for file in os.listdir(folder_path):&amp;#10;    if ename in file and '.log' in file:&amp;#10;        trial += 1" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as socket from 'socket';&amp;#10;import {signals} from 'hcphsignals';&amp;#10;var _pj;&amp;#10;var ename, folder_path, trial;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;function send_message(message, addr = &quot;localhost&quot;, port = 2023) {&amp;#10;    var client_socket;&amp;#10;    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);&amp;#10;    client_socket.connect([addr, port]);&amp;#10;    client_socket.sendall(message);&amp;#10;    client_socket.close();&amp;#10;}&amp;#10;folder_path = os.path.dirname(((&quot;/home/common/workspace/HCPh-data/Psychopy/session-&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;})) + &quot;/&quot;));&amp;#10;if ((! os.path.exists(folder_path))) {&amp;#10;    os.makedirs(folder_path);&amp;#10;}&amp;#10;ename = (&quot;resting_state_&quot; + data.getDateStr({&quot;format&quot;: &quot;%Y-%m-%d&quot;}));&amp;#10;trial = 0;&amp;#10;for (var file, _pj_c = 0, _pj_a = os.listdir(folder_path), _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    file = _pj_a[_pj_c];&amp;#10;    if ((_pj.in_es6(ename, file) &amp;&amp; _pj.in_es6(&quot;.log&quot;, file))) {&amp;#10;        trial += 1;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="send_message(b&quot;\x86&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start fixation&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(((signals.RUN | signals.ET_START_AND_STOP) | signals.ET_START_FIXATION).to_bytes());&amp;#10;ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;start fixation&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="send_message((signals.RUN | signals.ET_START_AND_STOP | signals.ET_START_FIXATION).to_bytes())&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start fixation&quot;)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="send_message(b&quot;\x10&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;end fixation&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="send_message(signals.ET_STOP_FIXATION.to_bytes());&amp;#10;ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;end fixation&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="send_message(signals.ET_STOP_FIXATION.to_bytes())&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;end fixation&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="channel2_start" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -335,15 +335,15 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="print('start fixation')&amp;#10;send_message(b&quot;\x04&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start fixation&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="send_message(signals.ET_START_FIXATION.to_bytes());&amp;#10;ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;start fixation&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="send_message(signals.ET_START_FIXATION.to_bytes())&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;start fixation&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="send_message(b&quot;\x10&quot;)&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;end fixation&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="send_message(signals.ET_STOP_FIXATION.to_bytes());&amp;#10;ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;end fixation&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="send_message(signals.ET_STOP_FIXATION.to_bytes())&amp;#10;ioServer.getDevice('tracker').sendMessage(&quot;end fixation&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="channel2_start_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -367,8 +367,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="ioServer.getDevice('tracker').sendMessage(&quot;Bye rs&quot;)&amp;#10;send_message(b&quot;\x02&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="ioServer.getDevice(&quot;tracker&quot;).sendMessage(&quot;Bye rs&quot;);&amp;#10;send_message(signals.ET_START_AND_STOP.to_bytes());&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="ioServer.getDevice('tracker').sendMessage(&quot;Bye rs&quot;)&amp;#10;send_message(signals.ET_START_AND_STOP.to_bytes())&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="if etRecord.status == NOT_STARTED:&amp;#10;    etRecord.status = STARTED" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="if ((etRecord.status === NOT_STARTED)) {&amp;#10;    etRecord.status = PsychoJS.Status.STARTED;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
