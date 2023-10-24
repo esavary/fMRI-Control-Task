@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on ven 20 oct 2023 21:17:30
+    on mar 24 oct 2023 18:13:51
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -135,7 +135,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='/home/common/workspace/HCPh-fMRI-tasks/task-fixation_dwi_lastrun.py',
+        originPath='task-fixation_dwi.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -403,6 +403,17 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         ori=0, pos=[0, 0], anchor='center',
         lineWidth=2,     colorSpace='rgb',  lineColor=[-1,-1,-1], fillColor=[-1,1,-1],
         opacity=1, depth=-4.0, interpolate=True)
+    prog = visual.Progress(
+        win, name='prog',
+        progress=0.0,
+        pos=(-0.25, 0.4), size=(0.5, 0.04), anchor='center left', units='height',
+        barColor=[-0.2157, 0.1686, 0.8588], backColor=None, borderColor=[-0.2157, 0.1686, 0.8588], colorSpace='rgb',
+        lineWidth=2.0, opacity=1.0, ori=0.0,
+        depth=-6
+    )
+    # Set experiment start values for variable component progress
+    progress = 0.0
+    progressContainer = []
     
     # create some handy timers
     if globalClock is None:
@@ -559,8 +570,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # Run 'Begin Routine' code from channel2_start
     send_message((signals.RUN | signals.ET_START_AND_STOP).to_bytes())
     ioServer.getDevice('tracker').sendMessage("hello fixation")
+    progress = 0.0  # Set Routine start values for progress
     # keep track of which components have finished
-    fixationComponents = [fixation_out, fixation_in, etRecord, fixation_out_2, fixation_in_2]
+    fixationComponents = [fixation_out, fixation_in, etRecord, fixation_out_2, fixation_in_2, prog]
     for thisComponent in fixationComponents:
         thisComponent.tStart = None
         thisComponent.tStop = None
@@ -575,7 +587,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Run Routine "fixation" ---
     routineForceEnded = not continueRoutine
-    while continueRoutine and routineTimer.getTime() < 1800.0:
+    while continueRoutine and routineTimer.getTime() < 1991.32:
         # get current time
         t = routineTimer.getTime()
         tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -586,7 +598,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # *fixation_out* updates
         
         # if fixation_out is starting this frame...
-        if fixation_out.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+        if fixation_out.status == NOT_STARTED and tThisFlip >= 31.32-frameTolerance:
             # keep track of start time/frame for later
             fixation_out.frameNStart = frameN  # exact frame index
             fixation_out.tStart = t  # local t and not account for scr refresh
@@ -606,7 +618,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # if fixation_out is stopping this frame...
         if fixation_out.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > fixation_out.tStartRefresh + 30-frameTolerance:
+            if tThisFlipGlobal > fixation_out.tStartRefresh + 60-frameTolerance:
                 # keep track of stop time/frame for later
                 fixation_out.tStop = t  # not accounting for scr refresh
                 fixation_out.frameNStop = frameN  # exact frame index
@@ -619,7 +631,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # *fixation_in* updates
         
         # if fixation_in is starting this frame...
-        if fixation_in.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        if fixation_in.status == NOT_STARTED and tThisFlip >= 31.32-frameTolerance:
             # keep track of start time/frame for later
             fixation_in.frameNStart = frameN  # exact frame index
             fixation_in.tStart = t  # local t and not account for scr refresh
@@ -639,7 +651,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # if fixation_in is stopping this frame...
         if fixation_in.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > fixation_in.tStartRefresh + 30-frameTolerance:
+            if tThisFlipGlobal > fixation_in.tStartRefresh + 60-frameTolerance:
                 # keep track of stop time/frame for later
                 fixation_in.tStop = t  # not accounting for scr refresh
                 fixation_in.frameNStop = frameN  # exact frame index
@@ -665,7 +677,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # if etRecord is stopping this frame...
         if etRecord.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > etRecord.tStartRefresh + 1800.0-frameTolerance:
+            if tThisFlipGlobal > etRecord.tStartRefresh + 1991-frameTolerance:
                 # keep track of stop time/frame for later
                 etRecord.tStop = t  # not accounting for scr refresh
                 etRecord.frameNStop = frameN  # exact frame index
@@ -677,7 +689,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # *fixation_out_2* updates
         
         # if fixation_out_2 is starting this frame...
-        if fixation_out_2.status == NOT_STARTED and tThisFlip >= 1770-frameTolerance:
+        if fixation_out_2.status == NOT_STARTED and tThisFlip >= 1931.32-frameTolerance:
             # keep track of start time/frame for later
             fixation_out_2.frameNStart = frameN  # exact frame index
             fixation_out_2.tStart = t  # local t and not account for scr refresh
@@ -697,7 +709,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # if fixation_out_2 is stopping this frame...
         if fixation_out_2.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > fixation_out_2.tStartRefresh + 30-frameTolerance:
+            if tThisFlipGlobal > fixation_out_2.tStartRefresh + 60-frameTolerance:
                 # keep track of stop time/frame for later
                 fixation_out_2.tStop = t  # not accounting for scr refresh
                 fixation_out_2.frameNStop = frameN  # exact frame index
@@ -710,7 +722,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # *fixation_in_2* updates
         
         # if fixation_in_2 is starting this frame...
-        if fixation_in_2.status == NOT_STARTED and tThisFlip >= 1770-frameTolerance:
+        if fixation_in_2.status == NOT_STARTED and tThisFlip >= 1931.32-frameTolerance:
             # keep track of start time/frame for later
             fixation_in_2.frameNStart = frameN  # exact frame index
             fixation_in_2.tStart = t  # local t and not account for scr refresh
@@ -730,7 +742,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         # if fixation_in_2 is stopping this frame...
         if fixation_in_2.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > fixation_in_2.tStartRefresh + 30-frameTolerance:
+            if tThisFlipGlobal > fixation_in_2.tStartRefresh + 60-frameTolerance:
                 # keep track of stop time/frame for later
                 fixation_in_2.tStop = t  # not accounting for scr refresh
                 fixation_in_2.frameNStop = frameN  # exact frame index
@@ -739,6 +751,42 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
                 # update status
                 fixation_in_2.status = FINISHED
                 fixation_in_2.setAutoDraw(False)
+        
+        # *prog* updates
+        
+        # if prog is starting this frame...
+        if prog.status == NOT_STARTED and tThisFlip >= 31.32-frameTolerance:
+            # keep track of start time/frame for later
+            prog.frameNStart = frameN  # exact frame index
+            prog.tStart = t  # local t and not account for scr refresh
+            prog.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(prog, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'prog.started')
+            # update status
+            prog.status = STARTED
+            prog.setAutoDraw(True)
+        
+        # if prog is active this frame...
+        if prog.status == STARTED:
+            # update params
+            prog.setProgress(progress, log=False)
+        
+        # if prog is stopping this frame...
+        if prog.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > prog.tStartRefresh + 1960-frameTolerance:
+                # keep track of stop time/frame for later
+                prog.tStop = t  # not accounting for scr refresh
+                prog.frameNStop = frameN  # exact frame index
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'prog.stopped')
+                # update status
+                prog.status = FINISHED
+                prog.setAutoDraw(False)
+        if t >= 31.32 and t <= 1991.32:
+            progress = progress + 0.000008503  # Set frame start values for progress
+            progressContainer.append(progress)  # Save frame values
         
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -772,11 +820,13 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # Run 'End Routine' code from channel2_start
     send_message(signals.ET_START_AND_STOP.to_bytes())
     ioServer.getDevice('tracker').sendMessage("bye fixation")
+    thisExp.addData('progress.routineEndVal', progress)  # Save end Routine value
     # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
     if routineForceEnded:
         routineTimer.reset()
     else:
-        routineTimer.addTime(-1800.000000)
+        routineTimer.addTime(-1991.320000)
+    
     
     # mark experiment as finished
     endExperiment(thisExp, win=win, inputs=inputs)

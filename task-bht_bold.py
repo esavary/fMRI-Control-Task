@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on ven 20 oct 2023 20:10:47
+    on mar 24 oct 2023 18:14:49
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -134,7 +134,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='/home/common/workspace/HCPh-fMRI-tasks/task-bht_bold_lastrun.py',
+        originPath='/home/common/workspace/HCPh-fMRI-tasks/task-bht_bold.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -185,7 +185,7 @@ def setupWindow(expInfo=None, win=None):
     if win is None:
         # if not given a window to setup, make one
         win = visual.Window(
-            size=[800, 600], fullscr=True, screen=1,
+            size=[1920, 1080], fullscr=True, screen=1,
             winType='pyglet', allowStencil=False,
             monitor='testMonitor', color=[-1.0000, -1.0000, -1.0000], colorSpace='rgb',
             backgroundImage='', backgroundFit='none',
@@ -417,7 +417,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         win=win, name='polygon_8',
         width=(0.5, 0.02)[0], height=(0.5, 0.02)[1],
         ori=0.0, pos=(0, 0), anchor='center',
-        lineWidth=1.0,     colorSpace='rgb',  lineColor=[1.0000, 0.2500, -1.0000], fillColor=[1.0000, 0.2500, -1.0000],
+        lineWidth=1.0,     colorSpace='rgb',  lineColor=[1.0000, 0.1000, -1.0000], fillColor=[1.0000, 0.1000, -1.0000],
         opacity=None, depth=0.0, interpolate=True)
     
     # --- Initialize components for Routine "hold_test" ---
@@ -470,7 +470,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
         win=win, name='polygon_8',
         width=(0.5, 0.02)[0], height=(0.5, 0.02)[1],
         ori=0.0, pos=(0, 0), anchor='center',
-        lineWidth=1.0,     colorSpace='rgb',  lineColor=[1.0000, 0.2500, -1.0000], fillColor=[1.0000, 0.2500, -1.0000],
+        lineWidth=1.0,     colorSpace='rgb',  lineColor=[1.0000, 0.1000, -1.0000], fillColor=[1.0000, 0.1000, -1.0000],
         opacity=None, depth=0.0, interpolate=True)
     
     # --- Initialize components for Routine "hold" ---
