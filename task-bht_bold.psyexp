@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" ?>
 <PsychoPy2experiment encoding="utf-8" version="2023.2.3">
   <Settings>
-    <Param val="use prefs" valType="str" updates="None" name="Audio latency priority"/>
-    <Param val="use prefs" valType="str" updates="None" name="Audio lib"/>
+    <Param val="0" valType="str" updates="None" name="Audio latency priority"/>
+    <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
     <Param val="u'../HCPh-data/Psychopy/session-'+data.getDateStr(format=&quot;%Y-%m-%d&quot;)+'/%s_%s_%s_session_%s' %(expName, expInfo['date'],expInfo['trial'],expInfo['session'])" valType="code" updates="None" name="Data filename"/>
@@ -21,7 +21,7 @@
     <Param val="True" valType="bool" updates="None" name="Save log file"/>
     <Param val="True" valType="bool" updates="None" name="Save psydat file"/>
     <Param val="True" valType="bool" updates="None" name="Save wide csv file"/>
-    <Param val="1" valType="num" updates="None" name="Screen"/>
+    <Param val="2" valType="num" updates="None" name="Screen"/>
     <Param val="True" valType="bool" updates="None" name="Show info dlg"/>
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
@@ -36,7 +36,7 @@
     <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
     <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
     <Param val="FILTER_LEVEL_OFF" valType="str" updates="None" name="elLiveFiltering"/>
-    <Param val="EYELINK 1000 DESKTOP" valType="str" updates="None" name="elModel"/>
+    <Param val="EYELINK 1000 LONG RANGE" valType="str" updates="None" name="elModel"/>
     <Param val="ELLIPSE_FIT" valType="str" updates="None" name="elPupilAlgorithm"/>
     <Param val="PUPIL_AREA" valType="str" updates="None" name="elPupilMeasure"/>
     <Param val="1000" valType="num" updates="None" name="elSampleRate"/>
@@ -987,9 +987,9 @@
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="1.0000, 0.2500, -1.0000" valType="color" updates="constant" name="fillColor"/>
+        <Param val="1.0000, 0.1000, -1.0000" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
-        <Param val="1.0000, 0.2500, -1.0000" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1.0000, 0.1000, -1.0000" valType="color" updates="constant" name="lineColor"/>
         <Param val="1" valType="num" updates="constant" name="lineWidth"/>
         <Param val="4" valType="int" updates="constant" name="nVertices"/>
         <Param val="polygon_8" valType="code" updates="None" name="name"/>
