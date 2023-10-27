@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on jeu 26 oct 2023 18:06:16
+    on ven 27 oct 2023 16:45:19
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -134,7 +134,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='task-bht_bold.py',
+        originPath='/home/common/workspace/HCPh-fMRI-tasks/task-bht_bold.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -365,9 +365,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "intro" ---
     text_2 = visual.TextStim(win=win, name='text_2',
-        text='Waiting for trigger. To proceed manually press "t".',
+        text='The breath-holding task will start shortly.\nPlease breathe at a comfortable pace.',
         font='Open Sans',
-        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.08, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
@@ -375,9 +375,9 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "instructions" ---
     directions = visual.TextStim(win=win, name='directions',
-        text='Breath-holding task\n\nBreathe through your nose during the whole experiment.\n\nDO NO HOLD YOUR BREATH (red color) IN THE FIRST TRIAL. \nA message will let you know when to start holding your breath in red.',
+        text='Breath-holding task\n\nBreathe in and out through your nose during the whole experiment.\n\nPlease DO NOT FOLLOW THE COLOR CUES IN THE FIRST TRIAL (and only the first trial).\n \nA message will let you know when to start holding your breath with the red sign.',
         font='Open Sans',
-        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.08, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
@@ -497,7 +497,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     finished = visual.TextStim(win=win, name='finished',
         text='Finished!\n\nPlease keep breathing at a comfortable pace',
         font='Open Sans',
-        pos=(0, 0), height=0.05, wrapWidth=None, ori=0.0, 
+        pos=(0, 0), height=0.08, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
