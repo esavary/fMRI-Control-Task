@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on mar 24 oct 2023 18:13:51
+    on ven 27 oct 2023 16:38:41
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -367,7 +367,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # --- Initialize components for Routine "triggerwait" ---
     key_resp = keyboard.Keyboard()
     et_desc = visual.TextStim(win=win, name='et_desc',
-        text="We're beginning the DWI task. Please keep your eyes on the central dot.",
+        text="We're beginning the diffusion MRI collection, it will be a long run.\n\nWhen it appears at the beginning and the end of the run, please focus your eyes on the central dot.",
         font='Arial',
         pos=(0, -0.4), height=0.12, wrapWidth=1.7, ori=0, 
         color='white', colorSpace='rgb', opacity=1, 
@@ -414,6 +414,13 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     # Set experiment start values for variable component progress
     progress = 0.0
     progressContainer = []
+    calibration_text = visual.TextStim(win=win, name='calibration_text',
+        text='Collecting calibration scans. Please do not move, swallow or take deep breaths during these 30 seconds.',
+        font='Open Sans',
+        pos=(0, -0.4), height=0.08, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-8.0);
     
     # create some handy timers
     if globalClock is None:
@@ -572,7 +579,7 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
     ioServer.getDevice('tracker').sendMessage("hello fixation")
     progress = 0.0  # Set Routine start values for progress
     # keep track of which components have finished
-    fixationComponents = [fixation_out, fixation_in, etRecord, fixation_out_2, fixation_in_2, prog]
+    fixationComponents = [fixation_out, fixation_in, etRecord, fixation_out_2, fixation_in_2, prog, calibration_text]
     for thisComponent in fixationComponents:
         thisComponent.tStart = None
         thisComponent.tStop = None
@@ -788,6 +795,39 @@ def run(expInfo, thisExp, win, inputs, globalClock=None, thisSession=None):
             progress = progress + 0.000008503  # Set frame start values for progress
             progressContainer.append(progress)  # Save frame values
         
+        # *calibration_text* updates
+        
+        # if calibration_text is starting this frame...
+        if calibration_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            calibration_text.frameNStart = frameN  # exact frame index
+            calibration_text.tStart = t  # local t and not account for scr refresh
+            calibration_text.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(calibration_text, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'calibration_text.started')
+            # update status
+            calibration_text.status = STARTED
+            calibration_text.setAutoDraw(True)
+        
+        # if calibration_text is active this frame...
+        if calibration_text.status == STARTED:
+            # update params
+            pass
+        
+        # if calibration_text is stopping this frame...
+        if calibration_text.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > calibration_text.tStartRefresh + 31.32-frameTolerance:
+                # keep track of stop time/frame for later
+                calibration_text.tStop = t  # not accounting for scr refresh
+                calibration_text.frameNStop = frameN  # exact frame index
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'calibration_text.stopped')
+                # update status
+                calibration_text.status = FINISHED
+                calibration_text.setAutoDraw(False)
+        
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
             thisExp.status = FINISHED
@@ -916,6 +956,7 @@ if __name__ == '__main__':
     thisExp = setupData(expInfo=expInfo)
     logFile = setupLogging(filename=thisExp.dataFileName)
     win = setupWindow(expInfo=expInfo)
+    win.mouseVisible = False
     inputs = setupInputs(expInfo=expInfo, thisExp=thisExp, win=win)
     run(
         expInfo=expInfo, 
