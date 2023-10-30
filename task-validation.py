@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2023.2.3),
-    on ven 20 oct 2023 15:28:40
+    on ven 27 oct 2023 16:30:09
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -135,7 +135,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='/home/common/workspace/HCPh-fMRI-tasks/task-validation_lastrun.py',
+        originPath='/home/common/workspace/HCPh-fMRI-tasks/task-validation.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -191,7 +191,7 @@ def setupWindow(expInfo=None, win=None):
             monitor='testMonitor', color=[-1.0000, -1.0000, -1.0000], colorSpace='rgb',
             backgroundImage='', backgroundFit='none',
             blendMode='avg', useFBO=True,
-            units='height'
+            units='norm'
         )
         if expInfo is not None:
             # store frame rate of monitor if we can measure it
@@ -202,7 +202,7 @@ def setupWindow(expInfo=None, win=None):
         win.colorSpace = 'rgb'
         win.backgroundImage = ''
         win.backgroundFit = 'none'
-        win.units = 'height'
+        win.units = 'norm'
     win.mouseVisible = False
     win.hideMessage()
     return win
